@@ -1,28 +1,24 @@
-"use client";
+import { createClient } from "@/lib/supabase/server";
+import { Container, Title, Group, SimpleGrid } from "@mantine/core";
+import { Product } from "@/features/product/types";
+import { ProductCard } from "@/features/product/components/ProductCard";
 
-import Link from "next/link";
-import {
-  Container,
-  Title,
-  Text,
-  Button,
-  Card,
-  Image,
-  Group,
-  SimpleGrid,
-} from "@mantine/core";
+export default async function Home() {
+  const supabase = await createClient();
 
-// Mock data matching the structure we used in the product page
-const FEATURED_PRODUCT = {
-  sku: "QJLJH-RPKJU",
-  slug: "32-oz-oasis-insulated-water-bottle",
-  title: "32 oz. Oasis Insulated Water Bottle",
-  description: "Premium stainless steel hydration solution.",
-  price: 26.65,
-  image: "https://placehold.co/600x400/png?text=Oasis+Bottle", // Placeholder
-};
+  // 1. Fetch active products
+  const { data, error } = await supabase
+    .from("products")
+    .select("*")
+    .eq("is_active", true)
+    .limit(3);
 
-export default function Home() {
+  if (error) {
+    console.error("Supabase Error:", error);
+  }
+
+  const products = (data as unknown as Product[]) ?? [];
+
   return (
     <Container size="lg" py="xl">
       <Group justify="space-between" mb="xl">
@@ -34,39 +30,9 @@ export default function Home() {
       </Title>
 
       <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }}>
-        <Card shadow="sm" padding="lg" radius="md" withBorder>
-          <Card.Section>
-            <Image
-              src={FEATURED_PRODUCT.image}
-              height={160}
-              alt={FEATURED_PRODUCT.title}
-            />
-          </Card.Section>
-
-          <Group justify="space-between" mt="md" mb="xs">
-            <Text fw={500}>{FEATURED_PRODUCT.title}</Text>
-          </Group>
-
-          <Text size="sm" c="dimmed">
-            {FEATURED_PRODUCT.description}
-          </Text>
-
-          <Group mt="md" mb="xs">
-            <Text fw={700} size="lg" c="blue">
-              ${FEATURED_PRODUCT.price}
-            </Text>
-          </Group>
-
-          <Button
-            fullWidth
-            mt="md"
-            radius="md"
-            component={Link}
-            href={`/pd/${FEATURED_PRODUCT.sku}/${FEATURED_PRODUCT.slug}`}
-          >
-            View Details
-          </Button>
-        </Card>
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
       </SimpleGrid>
     </Container>
   );

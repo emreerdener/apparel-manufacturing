@@ -36,14 +36,20 @@ export function ProductDetails({
   quantity,
   onQuantityChange,
 }: ProductDetailsProps) {
+  // Extract simple variables for cleaner JSX
+  // Handle cases where JSON data might be missing (?? [])
+  const features = product.specifications?.features ?? [];
+  const colors = product.specifications?.colors ?? [];
+  const price = product.base_price ?? 0;
+
   return (
     <Stack gap="md">
       {/* Header Section */}
       <div>
         <Text c="dimmed" size="xs" tt="uppercase" fw={700}>
-          SKU: {product.sku}
+          SKU: {product.legacy_sku}
         </Text>
-        <Title order={1}>{product.title}</Title>
+        <Title order={1}>{product.name}</Title>
         <Group gap="xs" mt="xs">
           <Badge color="green" variant="light">
             In Stock
@@ -56,17 +62,21 @@ export function ProductDetails({
 
       {/* Price */}
       <Text size="xl" fw={700} c="blue.8">
-        ${product.price.toFixed(2)}
+        ${price.toFixed(2)}
       </Text>
 
       {/* Description */}
-      <Text c="dimmed" lh={1.6}>
-        {product.description}
-      </Text>
+      {/* Note: 'description' is not in your DB Schema provided. 
+          If it's missing, you might need to add it to Supabase or use a fallback. 
+          Assuming it exists for now based on your previous code, 
+          but if not, remove this block. */}
+      {/* <Text c="dimmed" lh={1.6}>
+        {product.description} 
+      </Text> */}
 
       {/* Feature List */}
       <SimpleGrid cols={2} verticalSpacing="xs">
-        {product.features.map((feature) => (
+        {features.map((feature) => (
           <Group key={feature} gap="xs">
             <ThemeIcon color="teal" size={20} radius="xl">
               <CheckIcon style={{ width: rem(12), height: rem(12) }} />
@@ -82,7 +92,7 @@ export function ProductDetails({
           Color: <span style={{ fontWeight: 400 }}>{selectedColor.name}</span>
         </Text>
         <Group gap="xs">
-          {product.colors.map((color) => (
+          {colors.map((color) => (
             <ColorSwatch
               key={color.name}
               component="button"
