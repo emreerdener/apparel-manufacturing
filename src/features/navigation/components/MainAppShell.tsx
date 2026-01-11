@@ -4,6 +4,7 @@ import { AppShell, Stack, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import { Header } from "./Header";
+import { NAV_LINKS } from "../data/links";
 
 export function MainAppShell({ children }: { children: React.ReactNode }) {
   const [opened, { toggle }] = useDisclosure();
@@ -25,23 +26,19 @@ export function MainAppShell({ children }: { children: React.ReactNode }) {
 
       <AppShell.Navbar p="md">
         <Stack gap="xs">
-          <Button component={Link} href="/" variant="subtle" onClick={toggle}>
-            Home
-          </Button>
-          <Button
-            component={Link}
-            href="/pd/QJLJH-RPKJU/32-oz-oasis-insulated-water-bottle"
-            variant="subtle"
-            onClick={toggle}
-          >
-            Products
-          </Button>
-          <Button component={Link} href="#" variant="subtle" onClick={toggle}>
-            About
-          </Button>
-          <Button component={Link} href="#" variant="subtle" onClick={toggle}>
-            Contact
-          </Button>
+          {NAV_LINKS.map((item) => (
+            <Button
+              key={item.label}
+              component={Link}
+              href={item.link}
+              variant="subtle"
+              onClick={toggle}
+              justify="flex-start"
+              size="lg"
+            >
+              {item.label}
+            </Button>
+          ))}
         </Stack>
       </AppShell.Navbar>
 

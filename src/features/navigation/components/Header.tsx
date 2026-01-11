@@ -1,28 +1,13 @@
 import Link from "next/link";
-import {
-  Group,
-  Button,
-  Text,
-  ActionIcon,
-  Burger,
-  Container,
-} from "@mantine/core";
+import { Group, Button, ActionIcon, Burger, Container } from "@mantine/core";
 import { IconSearch, IconShoppingBag } from "@tabler/icons-react";
+import { NAV_LINKS } from "../data/links";
+import { Logo } from "./Logo";
 
 interface HeaderProps {
   opened: boolean;
   toggle: () => void;
 }
-
-const LINKS = [
-  { link: "/", label: "Home" },
-  {
-    link: "/pd/QJLJH-RPKJU/32-oz-oasis-insulated-water-bottle",
-    label: "Products",
-  },
-  { link: "#", label: "About" },
-  { link: "#", label: "Contact" },
-];
 
 export function Header({ opened, toggle }: HeaderProps) {
   return (
@@ -31,21 +16,17 @@ export function Header({ opened, toggle }: HeaderProps) {
         {/* Left Side: Logo & Mobile Menu Toggle */}
         <Group>
           <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
-          <Text
-            component={Link}
+          <Link
             href="/"
-            fw={900}
-            size="lg"
-            c="blue"
-            style={{ textDecoration: "none" }}
+            style={{ display: "flex", alignItems: "center", color: "inherit" }}
           >
-            APPAREL MFG
-          </Text>
+            <Logo h={26} />
+          </Link>
         </Group>
 
         {/* Center: Navigation Links (Hidden on mobile) */}
         <Group gap="md" visibleFrom="xs">
-          {LINKS.map((item) => (
+          {NAV_LINKS.map((item) => (
             <Button
               key={item.label}
               component={Link}
