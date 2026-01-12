@@ -10,7 +10,12 @@ interface HeaderProps {
 
 export function Header({ opened, toggle }: HeaderProps) {
   return (
-    <Group justify="space-between" h="100%" wrap="nowrap" px="md">
+    <Group
+      justify="space-between"
+      h="100%"
+      wrap="nowrap"
+      px={{ base: "md", sm: "lg" }}
+    >
       {/* Left Side: Logo & Mobile Menu Toggle */}
       <Group wrap="nowrap">
         <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
@@ -18,7 +23,7 @@ export function Header({ opened, toggle }: HeaderProps) {
           href="/"
           style={{ display: "flex", alignItems: "center", color: "inherit" }}
         >
-          <Logo h={32} />
+          <Logo h={38} />
         </Link>
 
         {/* Center: Navigation Links (Hidden on mobile) */}

@@ -29,7 +29,7 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    "src/features/navigation/data"
+    "src/features/layout/data"
   ],
   "exclude": ["node_modules"]
 }

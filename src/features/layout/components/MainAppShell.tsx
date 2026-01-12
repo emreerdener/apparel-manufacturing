@@ -5,14 +5,15 @@ import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import { Header } from "./Header";
 import { NAV_LINKS } from "../data/links";
+import Footer from "./Footer";
 
 export function MainAppShell({ children }: { children: React.ReactNode }) {
   const [opened, { toggle }] = useDisclosure();
 
   return (
     <AppShell
-      header={{ height: 64 }}
-      footer={{ height: 60 }}
+      header={{ height: 72 }}
+      footer={{ height: 64 }}
       navbar={{
         width: 300,
         breakpoint: "sm",
@@ -44,7 +45,9 @@ export function MainAppShell({ children }: { children: React.ReactNode }) {
       </AppShell.Navbar>
 
       <AppShell.Main>{children}</AppShell.Main>
-      <AppShell.Footer p="md">Footer</AppShell.Footer>
+      <AppShell.Footer p="md">
+        <Footer />
+      </AppShell.Footer>
     </AppShell>
   );
 }

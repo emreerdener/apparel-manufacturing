@@ -1,4 +1,4 @@
-import { createTheme, rem } from "@mantine/core";
+import { createTheme } from "@mantine/core";
 
 export const theme = createTheme({
   // Primary Color
@@ -9,12 +9,8 @@ export const theme = createTheme({
     "Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
 
   headings: {
-    fontFamily:
-      "Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif",
+    fontFamily: "var(--font-poppins), sans-serif",
     fontWeight: "700",
-    sizes: {
-      h1: { fontSize: rem(36) },
-    },
   },
 
   // Components
