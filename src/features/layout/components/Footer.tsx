@@ -1,6 +1,6 @@
 "use client";
 
-import { Group, Text } from "@mantine/core";
+import { ActionIcon, Group, Stack, Text } from "@mantine/core";
 import {
   IconBrandFacebook,
   IconBrandInstagram,
@@ -16,18 +16,47 @@ const ThemeSwitch = dynamic(
 
 export default function Footer() {
   return (
-    <Group justify="space-between" h="100%">
-      <Group>
-        <IconBrandFacebook size={24} />
-        <IconBrandX size={24} />
-        <IconBrandLinkedin size={24} />
-        <IconBrandInstagram size={24} />
-      </Group>
+    <Stack p="lg">
+      <Group justify="space-between" h="100%">
+        <Group gap="xs">
+          <ActionIcon
+            variant="subtle"
+            aria-label="Apparel Manufacturing Facebook"
+            size="lg"
+          >
+            <IconBrandFacebook size={24} />
+          </ActionIcon>
 
-      <Text size="sm" c="dimmed">
-        © 2026 Apparel Manufacturing Co., Inc.
-      </Text>
-      <ThemeSwitch />
-    </Group>
+          <ActionIcon
+            variant="subtle"
+            aria-label="Apparel Manufacturing X"
+            size="lg"
+          >
+            <IconBrandX size={24} />
+          </ActionIcon>
+
+          <ActionIcon
+            variant="subtle"
+            aria-label="Apparel Manufacturing LinkedIn"
+            size="lg"
+          >
+            <IconBrandLinkedin size={24} />
+          </ActionIcon>
+
+          <ActionIcon
+            variant="subtle"
+            aria-label="Apparel Manufacturing Instagram"
+            size="lg"
+          >
+            <IconBrandInstagram size={24} />
+          </ActionIcon>
+        </Group>
+
+        <Text size="sm" c="dimmed">
+          © 2026 Apparel Manufacturing Co., Inc.
+        </Text>
+        <ThemeSwitch />
+      </Group>
+    </Stack>
   );
 }

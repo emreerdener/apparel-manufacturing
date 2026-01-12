@@ -16,7 +16,7 @@ export function Hero() {
       {/* Left Column: Content */}
       <Center p="xl">
         <Stack gap="md" py="xl" maw={550}>
-          <Title order={1} fz={{ base: 40, xs: 50 }} lh={1.2} fw={800}>
+          <Title order={1} fz={{ base: 40, xs: 50 }} lh={1.2}>
             Your brand, custom manufactured
           </Title>
           <Text size="xl" c="dimmed">

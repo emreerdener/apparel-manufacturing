@@ -12,7 +12,6 @@ export function MainAppShell({ children }: { children: React.ReactNode }) {
   return (
     <AppShell
       header={{ height: 72 }}
-      footer={{ height: 64 }}
       navbar={{
         width: 300,
         breakpoint: "md",
@@ -32,10 +31,12 @@ export function MainAppShell({ children }: { children: React.ReactNode }) {
         </Stack>
       </AppShell.Navbar>
 
-      <AppShell.Main>{children}</AppShell.Main>
-      <AppShell.Footer p="md">
-        <Footer />
-      </AppShell.Footer>
+      <AppShell.Main>
+        <Stack>
+          {children}
+          <Footer />
+        </Stack>
+      </AppShell.Main>
     </AppShell>
   );
 }

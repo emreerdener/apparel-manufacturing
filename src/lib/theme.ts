@@ -21,6 +21,11 @@ export const theme = createTheme({
         radius: "md",
       },
     },
+    ActionIcon: {
+      defaultProps: {
+        radius: "md",
+      },
+    },
     Title: {
       styles: {
         root: {

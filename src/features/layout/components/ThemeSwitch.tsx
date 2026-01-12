@@ -10,7 +10,7 @@ export function ThemeSwitch() {
     <SegmentedControl
       value={colorScheme}
       onChange={(value) => setColorScheme(value as "light" | "dark")}
-      size="sm"
+      size="md"
       data={[
         {
           value: "light",
