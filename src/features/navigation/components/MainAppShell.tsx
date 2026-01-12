@@ -18,7 +18,6 @@ export function MainAppShell({ children }: { children: React.ReactNode }) {
         breakpoint: "sm",
         collapsed: { mobile: !opened, desktop: true },
       }}
-      padding="md"
     >
       <AppShell.Header>
         <Header opened={opened} toggle={toggle} />

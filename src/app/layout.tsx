@@ -7,7 +7,7 @@ import { MainAppShell } from "@/features/navigation/components/MainAppShell";
 export const metadata: Metadata = {
   title: "Apparel Manufacturing",
   description:
-    "Apparel Manufacturing team continues to offer world class branded products.",
+    "Apparel Manufacturing offers world class custom branded products.",
 };
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <ColorSchemeScript />
+        <ColorSchemeScript defaultColorScheme="light" />
       </head>
       <body>
         <MantineProvider theme={theme}>

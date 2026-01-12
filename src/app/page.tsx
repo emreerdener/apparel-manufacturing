@@ -1,7 +1,8 @@
-import { Container, Title, Group, SimpleGrid } from "@mantine/core";
+import { Title, SimpleGrid, Stack } from "@mantine/core";
 import { Product } from "@/features/product/types";
 import { ProductCard } from "@/features/product/components/ProductCard";
 import { createServer } from "@/lib/supabase/server";
+import { Hero } from "@/features/home/components/Hero";
 
 export default async function Home() {
   const supabase = await createServer();
@@ -20,20 +21,20 @@ export default async function Home() {
   const products = (data as unknown as Product[]) ?? [];
 
   return (
-    <Container size="xl" py="xl">
-      <Group justify="space-between" mb="xl">
-        <Title order={1}>Apparel Manufacturing</Title>
-      </Group>
+    <>
+      <Hero />
 
-      <Title order={2} mb="md">
-        Featured Products
-      </Title>
+      <Stack p="xl">
+        <Title order={2} mb="md">
+          Featured Products
+        </Title>
 
-      <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }}>
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </SimpleGrid>
-    </Container>
+        <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }}>
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </SimpleGrid>
+      </Stack>
+    </>
   );
 }
