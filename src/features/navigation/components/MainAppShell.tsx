@@ -11,7 +11,7 @@ export function MainAppShell({ children }: { children: React.ReactNode }) {
 
   return (
     <AppShell
-      header={{ height: 60 }}
+      header={{ height: 64 }}
       footer={{ height: 60 }}
       navbar={{
         width: 300,
@@ -33,12 +33,14 @@ export function MainAppShell({ children }: { children: React.ReactNode }) {
               href={item.link}
               variant="subtle"
               onClick={toggle}
-              justify="flex-start"
               size="lg"
             >
               {item.label}
             </Button>
           ))}
+          <Button variant="subtle" size="lg">
+            Log in
+          </Button>
         </Stack>
       </AppShell.Navbar>
 

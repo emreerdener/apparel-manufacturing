@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { Group, Button, ActionIcon, Burger, Container } from "@mantine/core";
-import { IconSearch, IconShoppingBag } from "@tabler/icons-react";
+import { Group, Button, Burger, Container } from "@mantine/core";
 import { NAV_LINKS } from "../data/links";
 import { Logo } from "./Logo";
 
@@ -12,41 +11,38 @@ interface HeaderProps {
 export function Header({ opened, toggle }: HeaderProps) {
   return (
     <Container size="xl" h="100%">
-      <Group justify="space-between" h="100%">
+      <Group justify="space-between" h="100%" wrap="nowrap">
         {/* Left Side: Logo & Mobile Menu Toggle */}
-        <Group>
-          <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
+        <Group wrap="nowrap">
+          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
           <Link
             href="/"
             style={{ display: "flex", alignItems: "center", color: "inherit" }}
           >
-            <Logo h={26} />
+            <Logo h={32} />
           </Link>
-        </Group>
 
-        {/* Center: Navigation Links (Hidden on mobile) */}
-        <Group gap="md" visibleFrom="xs">
-          {NAV_LINKS.map((item) => (
-            <Button
-              key={item.label}
-              component={Link}
-              href={item.link}
-              variant="subtle"
-              c="gray.7"
-            >
-              {item.label}
-            </Button>
-          ))}
+          {/* Center: Navigation Links (Hidden on mobile) */}
+          <Group gap="md" visibleFrom="sm" wrap="nowrap">
+            {NAV_LINKS.map((item) => (
+              <Button
+                key={item.label}
+                component={Link}
+                href={item.link}
+                variant="subtle"
+              >
+                {item.label}
+              </Button>
+            ))}
+          </Group>
         </Group>
 
         {/* Right Side: Actions */}
-        <Group gap="xs">
-          <ActionIcon variant="subtle" color="gray" size="lg">
-            <IconSearch size={20} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon variant="subtle" color="gray" size="lg">
-            <IconShoppingBag size={20} stroke={1.5} />
-          </ActionIcon>
+        <Group gap="xs" wrap="nowrap">
+          <Button variant="subtle" visibleFrom="sm">
+            Log in
+          </Button>
+          <Button>Start order</Button>
         </Group>
       </Group>
     </Container>

@@ -1,10 +1,10 @@
-import { createClient } from "@/lib/supabase/server";
 import { Container, Title, Group, SimpleGrid } from "@mantine/core";
 import { Product } from "@/features/product/types";
 import { ProductCard } from "@/features/product/components/ProductCard";
+import { createServer } from "@/lib/supabase/server";
 
 export default async function Home() {
-  const supabase = await createClient();
+  const supabase = await createServer();
 
   // 1. Fetch active products
   const { data, error } = await supabase
@@ -20,7 +20,7 @@ export default async function Home() {
   const products = (data as unknown as Product[]) ?? [];
 
   return (
-    <Container size="lg" py="xl">
+    <Container size="xl" py="xl">
       <Group justify="space-between" mb="xl">
         <Title order={1}>Apparel Manufacturing</Title>
       </Group>

@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/server";
+import { createServer } from "@/lib/supabase/server";
 import { notFound, redirect } from "next/navigation";
 import { ProductView } from "@/features/product/components/ProductView";
 import { Product } from "@/features/product/types";
@@ -12,7 +12,7 @@ interface ProductPageProps {
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { sku, slug } = await params;
-  const supabase = await createClient();
+  const supabase = await createServer();
 
   // 1. Fetch by SKU ("The Golden Key")
   // We use the SKU because it is the unique, permanent identifier.

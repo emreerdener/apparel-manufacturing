@@ -24,7 +24,7 @@ export function ProductView({ product }: ProductViewProps) {
   const galleryImages = product.media_assets?.images ?? [];
 
   return (
-    <Container size="lg" py="xl">
+    <Container size="xl" py="xl">
       <Paper shadow="xs" p="md" withBorder>
         <SimpleGrid cols={{ base: 1, md: 2 }} spacing="xl">
           <ProductGallery
