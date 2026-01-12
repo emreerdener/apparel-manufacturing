@@ -21,6 +21,13 @@ export const theme = createTheme({
         radius: "md",
       },
     },
+    Title: {
+      styles: {
+        root: {
+          letterSpacing: "-1px",
+        },
+      },
+    },
     Container: {
       defaultProps: {
         size: "xl", // 1280px

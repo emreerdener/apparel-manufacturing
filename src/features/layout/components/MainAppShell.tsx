@@ -2,10 +2,9 @@
 
 import { AppShell, Stack, Button } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import Link from "next/link";
 import { Header } from "./Header";
-import { NAV_LINKS } from "../data/links";
 import Footer from "./Footer";
+import { NavigationLinks } from "./NavigationLinks";
 
 export function MainAppShell({ children }: { children: React.ReactNode }) {
   const [opened, { toggle }] = useDisclosure();
@@ -16,7 +15,7 @@ export function MainAppShell({ children }: { children: React.ReactNode }) {
       footer={{ height: 64 }}
       navbar={{
         width: 300,
-        breakpoint: "sm",
+        breakpoint: "md",
         collapsed: { mobile: !opened, desktop: true },
       }}
     >
@@ -26,18 +25,7 @@ export function MainAppShell({ children }: { children: React.ReactNode }) {
 
       <AppShell.Navbar p="md">
         <Stack gap="xs">
-          {NAV_LINKS.map((item) => (
-            <Button
-              key={item.label}
-              component={Link}
-              href={item.link}
-              variant="subtle"
-              onClick={toggle}
-              size="lg"
-            >
-              {item.label}
-            </Button>
-          ))}
+          <NavigationLinks />
           <Button variant="subtle" size="lg">
             Log in
           </Button>

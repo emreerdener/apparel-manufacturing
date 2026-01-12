@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Group, Button, Burger } from "@mantine/core";
-import { NAV_LINKS } from "../data/links";
 import { Logo } from "./Logo";
+import { NavigationLinks } from "./NavigationLinks";
 
 interface HeaderProps {
   opened: boolean;
@@ -18,7 +18,7 @@ export function Header({ opened, toggle }: HeaderProps) {
     >
       {/* Left Side: Logo & Mobile Menu Toggle */}
       <Group wrap="nowrap">
-        <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+        <Burger opened={opened} onClick={toggle} hiddenFrom="md" size="sm" />
         <Link
           href="/"
           style={{ display: "flex", alignItems: "center", color: "inherit" }}
@@ -26,19 +26,7 @@ export function Header({ opened, toggle }: HeaderProps) {
           <Logo h={38} />
         </Link>
 
-        {/* Center: Navigation Links (Hidden on mobile) */}
-        <Group gap="xs" visibleFrom="sm" wrap="nowrap">
-          {NAV_LINKS.map((item) => (
-            <Button
-              key={item.label}
-              component={Link}
-              href={item.link}
-              variant="subtle"
-            >
-              {item.label}
-            </Button>
-          ))}
-        </Group>
+        <NavigationLinks />
       </Group>
 
       {/* Right Side: Actions */}
