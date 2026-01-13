@@ -3,6 +3,7 @@
 import {
   ActionIcon,
   Anchor,
+  Button,
   Card,
   Flex,
   Grid,
@@ -18,6 +19,7 @@ import {
   IconBrandX,
 } from "@tabler/icons-react";
 import dynamic from "next/dynamic";
+import classes from "./layout.module.css";
 
 const ThemeSwitch = dynamic(
   () => import("./ThemeSwitch").then((mod) => mod.ThemeSwitch),
@@ -27,6 +29,29 @@ const ThemeSwitch = dynamic(
 export default function Footer() {
   return (
     <Stack gap={0}>
+      <Card className={classes.footerCta} py={100} radius={0}>
+        <Stack align="center">
+          <Stack align="center" maw={600}>
+            <Title
+              order={2}
+              fz={{ base: 32, sm: 40 }}
+              ta="center"
+              lh={1.2}
+              c="white"
+            >
+              Your promotional ecosystem
+            </Title>
+            <Text ta="center" c="white" size="xl">
+              Family owned for 44 years, sourcing 10,000+ configurable products
+              across 26 categories.
+            </Text>
+
+            <Button size="lg" mt="md" variant="default">
+              View products
+            </Button>
+          </Stack>
+        </Stack>
+      </Card>
       <Card
         px="xl"
         py={60}

@@ -6,13 +6,13 @@ export function NavigationLinks() {
   const chevron = <IconChevronDown size={18} />;
 
   return (
-    <Group gap="xs" visibleFrom="md">
+    <Group gap={0} visibleFrom="md">
       <Button component={Link} href="/about" variant="subtle">
         Products
       </Button>
 
       <Button component={Link} href="/contact" variant="subtle">
-        About
+        About us
       </Button>
 
       <Menu trigger="hover" openDelay={100} closeDelay={400} withinPortal>
