@@ -1,23 +1,23 @@
 import Link from "next/link";
-import { Group, Button, Menu } from "@mantine/core";
+import { Button, Menu, Flex } from "@mantine/core";
 import { IconChevronDown } from "@tabler/icons-react";
 
 export function NavigationLinks() {
   const chevron = <IconChevronDown size={18} />;
-
+  const linkSize = { base: "lg", md: "md" };
   return (
-    <Group gap={0} visibleFrom="md">
-      <Button component={Link} href="/about" variant="subtle">
+    <Flex gap={{ base: "lg", md: 0 }} direction={{ base: "column", md: "row" }}>
+      <Button component={Link} href="/about" variant="subtle" fz={linkSize}>
         Products
       </Button>
 
-      <Button component={Link} href="/contact" variant="subtle">
+      <Button component={Link} href="/contact" variant="subtle" fz={linkSize}>
         About us
       </Button>
 
       <Menu trigger="hover" openDelay={100} closeDelay={400} withinPortal>
         <Menu.Target>
-          <Button variant="subtle" rightSection={chevron}>
+          <Button variant="subtle" rightSection={chevron} fz={linkSize}>
             Resources
           </Button>
         </Menu.Target>
@@ -37,9 +37,9 @@ export function NavigationLinks() {
         </Menu.Dropdown>
       </Menu>
 
-      <Button component={Link} href="/contact" variant="subtle">
+      <Button component={Link} href="/contact" variant="subtle" fz={linkSize}>
         Contact
       </Button>
-    </Group>
+    </Flex>
   );
 }

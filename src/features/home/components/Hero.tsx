@@ -17,14 +17,14 @@ export function Hero() {
       <Center p="xl">
         <Stack gap="md" py="xl" maw={550}>
           <Title order={1} fz={{ base: 40, xs: 50 }} lh={1.2}>
-            Elevate your brand
+            Your promotional ecosystem
           </Title>
           <Text size="xl" c="dimmed">
             Your complete promotional ecosystem. Family owned for 44 years,
             sourcing 10,000+ configurable products across 26 categories.
           </Text>
           <Group mt="md" gap="xl">
-            <Button size="lg">Get a quote</Button>
+            <Button size="lg">Start an order</Button>
             <Anchor size="lg" underline="hover" fw={600}>
               View products
             </Anchor>

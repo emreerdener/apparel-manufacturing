@@ -31,7 +31,7 @@ export default function Footer() {
     <Stack gap={0}>
       <Card className={classes.footerCta} py={100} radius={0}>
         <Stack align="center">
-          <Stack align="center" maw={600}>
+          <Stack align="center" maw={550}>
             <Title
               order={2}
               fz={{ base: 32, sm: 40 }}
@@ -39,7 +39,7 @@ export default function Footer() {
               lh={1.2}
               c="white"
             >
-              Your promotional ecosystem
+              Elevate your brand
             </Title>
             <Text ta="center" c="white" size="xl">
               Family owned for 44 years, sourcing 10,000+ configurable products

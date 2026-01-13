@@ -28,6 +28,7 @@ export function MainAppShell({ children }: { children: React.ReactNode }) {
           <Button variant="subtle" size="lg">
             Log in
           </Button>
+          <Button size="lg">Start an order</Button>
         </Stack>
       </AppShell.Navbar>
 
