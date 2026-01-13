@@ -22,6 +22,9 @@ export function NavigationLinks() {
           </Button>
         </Menu.Target>
         <Menu.Dropdown>
+          <Menu.Item component={Link} href="/faq">
+            FAQ
+          </Menu.Item>
           <Menu.Item component={Link} href="/news-events">
             News & events
           </Menu.Item>
@@ -30,9 +33,6 @@ export function NavigationLinks() {
           </Menu.Item>
           <Menu.Item component={Link} href="/links">
             Presentations
-          </Menu.Item>
-          <Menu.Item component={Link} href="/links">
-            Links
           </Menu.Item>
         </Menu.Dropdown>
       </Menu>
