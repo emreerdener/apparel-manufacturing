@@ -33,7 +33,7 @@ export function MainAppShell({ children }: { children: React.ReactNode }) {
       </AppShell.Navbar>
 
       <AppShell.Main>
-        <Stack>
+        <Stack gap={0}>
           {children}
           <Footer />
         </Stack>
