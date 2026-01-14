@@ -12,9 +12,28 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://apparelm.vercel.app/"),
+
   title: "Apparel Manufacturing",
   description:
     "Apparel Manufacturing offers world class custom branded products.",
+  openGraph: {
+    title: "Apparel Manufacturing",
+    description:
+      "Apparel Manufacturing offers world class custom branded products.",
+    url: "/",
+    siteName: "Apparel Manufacturing",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Apparel Manufacturing Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
