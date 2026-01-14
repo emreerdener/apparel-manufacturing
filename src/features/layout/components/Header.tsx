@@ -45,10 +45,10 @@ export function Header({ opened, toggle }: HeaderProps) {
 
       {/* Right Side: Actions */}
       <Group gap="xs" wrap="nowrap">
-        <Button variant="subtle" visibleFrom="md">
+        <Button variant="light" visibleFrom="md">
           Log in
         </Button>
-        <ActionIcon size="xl" aria-label="Shopping bag" variant="subtle">
+        <ActionIcon aria-label="Shopping bag" h={42} w={42} variant="outline">
           <IconShoppingBag size={24} />
         </ActionIcon>
       </Group>

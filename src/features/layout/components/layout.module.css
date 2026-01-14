@@ -1,7 +1,7 @@
 .footerCta {
   background: linear-gradient(
-    45deg,
+    180deg,
     var(--mantine-color-teal-6),
-    var(--mantine-color-teal-9)
+    var(--mantine-color-teal-7)
   );
 }

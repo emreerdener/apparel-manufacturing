@@ -10,9 +10,9 @@ export function HowItsDone() {
           How it&apos;s done
         </Title>
         <Text c="dimmed" maw={800} ta="center" size="xl">
-          We combine generations of manufacturing expertise with
-          state-of-the-art equipment to ensure your brand’s merchandise is
-          produced to the highest standard, right here in the USA.
+          Generations of manufacturing expertise with state-of-the-art equipment
+          ensures your merchandise is produced to the highest standard, right
+          here in the USA.
         </Text>
       </Stack>
 
@@ -24,7 +24,7 @@ export function HowItsDone() {
           style={{
             border: 0,
             overflow: "hidden",
-            borderRadius: "var(--mantine-radius-lg)",
+            borderRadius: "var(--mantine-radius-md)",
           }}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
