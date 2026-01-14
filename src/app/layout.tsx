@@ -16,11 +16,11 @@ export const metadata: Metadata = {
 
   title: "Apparel Manufacturing",
   description:
-    "Apparel Manufacturing offers world class custom branded products.",
+    "Apparel Manufacturing is your source for branded merchandise. Expert embroidery, screen printing, and custom apparel for businesses nationwide since 1981.",
   openGraph: {
     title: "Apparel Manufacturing",
     description:
-      "Apparel Manufacturing offers world class custom branded products.",
+      "Apparel Manufacturing is your source for branded merchandise. Expert embroidery, screen printing, and custom apparel for businesses nationwide since 1981.",
     url: "/",
     siteName: "Apparel Manufacturing",
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Apparel Manufacturing Preview",
+        alt: "Apparel Manufacturing",
       },
     ],
     locale: "en_US",
