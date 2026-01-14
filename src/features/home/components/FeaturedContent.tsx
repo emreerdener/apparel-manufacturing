@@ -1,6 +1,14 @@
 "use client";
 
-import { Center, Grid, Image, Stack, Text, Title } from "@mantine/core";
+import {
+  AspectRatio,
+  Center,
+  Grid,
+  Image,
+  Stack,
+  Text,
+  Title,
+} from "@mantine/core";
 
 export default function FeaturedContent() {
   return (
@@ -24,25 +32,27 @@ export default function FeaturedContent() {
         </Grid.Col>
 
         <Grid.Col span={{ base: 12, md: 6 }} order={{ base: 1, md: 2 }}>
-          <Image
-            src="/images/building.jpg"
-            alt="Apparel Manufacturing headquarters"
-            radius="md"
-            h={500}
-            w="100%"
-            fit="cover"
-          />
+          <AspectRatio ratio={16 / 9}>
+            <Image
+              src="/images/building.jpg"
+              alt="Apparel Manufacturing headquarters"
+              radius="md"
+              w="100%"
+              fit="cover"
+            />
+          </AspectRatio>
         </Grid.Col>
 
         <Grid.Col span={{ base: 12, md: 6 }} order={{ base: 3, md: 3 }}>
-          <Image
-            src="/images/machines-c.jpg"
-            alt="Embroidery and screen printing machinery"
-            radius="md"
-            h={500}
-            w="100%"
-            fit="cover"
-          />
+          <AspectRatio ratio={16 / 9}>
+            <Image
+              src="/images/machines-c.jpg"
+              alt="Embroidery and screen printing machinery"
+              radius="md"
+              w="100%"
+              fit="cover"
+            />
+          </AspectRatio>
         </Grid.Col>
 
         <Grid.Col span={{ base: 12, md: 6 }} order={{ base: 4, md: 4 }}>

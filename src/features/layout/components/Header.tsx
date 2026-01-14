@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Group, Button, Burger, ActionIcon, Box } from "@mantine/core";
 import { Logo } from "./Logo";
 import { NavigationLinks } from "./NavigationLinks";
-import { IconSearch, IconShoppingBag } from "@tabler/icons-react";
+import { IconShoppingBag } from "@tabler/icons-react";
 
 interface HeaderProps {
   opened: boolean;
@@ -18,7 +18,7 @@ export function Header({ opened, toggle }: HeaderProps) {
       px={{ base: "md", sm: "lg" }}
     >
       {/* Left Side: Logo & Mobile Menu Toggle */}
-      <Group wrap="nowrap" w={{ base: 98, md: "auto" }}>
+      <Group wrap="nowrap" w={{ base: 44, md: "auto" }}>
         <Burger opened={opened} onClick={toggle} hiddenFrom="md" size="sm" />
         <Box visibleFrom="md">
           <Link
@@ -48,9 +48,6 @@ export function Header({ opened, toggle }: HeaderProps) {
         <Button variant="subtle" visibleFrom="md">
           Log in
         </Button>
-        <ActionIcon size="xl" aria-label="Search" variant="subtle">
-          <IconSearch size={24} />
-        </ActionIcon>
         <ActionIcon size="xl" aria-label="Shopping bag" variant="subtle">
           <IconShoppingBag size={24} />
         </ActionIcon>
