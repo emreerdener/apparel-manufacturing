@@ -24,7 +24,7 @@ export function Hero() {
             10,000 premium products for brands of all sizes.
           </Text>
           <Group mt="md" gap="xl">
-            <Button size="lg">Start an order</Button>
+            <Button size="lg">Start order</Button>
             <Anchor size="lg" underline="hover" fw={600}>
               View products
             </Anchor>
