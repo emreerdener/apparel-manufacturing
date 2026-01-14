@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react"; // 1. Import useState
 import { DUMMY_PRODUCTS } from "@/features/product/data/dummyProducts";
 import {
   Card,
@@ -18,6 +19,8 @@ import {
 import { IconShirt, IconSparkles2 } from "@tabler/icons-react";
 
 export function FeaturedProducts() {
+  const [focused, setFocused] = useState(false);
+
   return (
     <Stack gap={0}>
       {/* AI Search */}
@@ -29,11 +32,16 @@ export function FeaturedProducts() {
             inset={8}
             style={{
               zIndex: 0,
-              filter: "blur(20px)",
-              opacity: 0.7,
-              borderRadius: "var(--mantine-radius-xl)",
+              borderRadius: "var(--mantine-radius-lg)",
               backgroundImage:
                 "linear-gradient(135deg, #06b6d4 0%, #8b5cf6 50%, #ec4899 100%)",
+              transition: "all 0.4s ease-in-out",
+              // 4. Conditional styles based on focus state
+              // When focused: brighter (higher opacity), slightly more blur, more saturated colors
+              opacity: focused ? 0.8 : 0.5,
+              filter: focused
+                ? "blur(24px) saturate(1.5)"
+                : "blur(20px) saturate(1.0)",
             }}
           />
 
@@ -42,10 +50,14 @@ export function FeaturedProducts() {
             leftSection={<IconSparkles2 size={24} />}
             size="xl"
             radius="lg"
+            // 5. Attach focus handlers to update state
+            onFocus={() => setFocused(true)}
+            onBlur={() => setFocused(false)}
             styles={{
               root: { position: "relative", zIndex: 1 },
               input: {
-                boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.03)",
+                backgroundColor: "var(--mantine-color-body)",
               },
             }}
           />
