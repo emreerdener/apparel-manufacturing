@@ -44,7 +44,7 @@ export function Header({ opened, toggle }: HeaderProps) {
       </Box>
 
       {/* Right Side: Actions */}
-      <Group gap="xs" wrap="nowrap">
+      <Group gap="md" wrap="nowrap">
         <Button variant="light" visibleFrom="md">
           Log in
         </Button>

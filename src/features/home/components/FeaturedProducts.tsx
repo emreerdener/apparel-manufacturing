@@ -12,7 +12,9 @@ import {
   Space,
   Box,
   rem,
+  Center,
 } from "@mantine/core";
+import { IconShirt } from "@tabler/icons-react";
 
 export function FeaturedProducts() {
   return (
@@ -46,6 +48,22 @@ export function FeaturedProducts() {
               </Stack>
             </Card>
           ))}
+          <Card
+            shadow="sm"
+            radius="md"
+            withBorder
+            w={rem(260)}
+            style={{ flexShrink: 0 }}
+          >
+            <Center h="100%">
+              <Stack align="center">
+                <IconShirt size={40} />
+                <Text fw={700} size="lg">
+                  View all products
+                </Text>
+              </Stack>
+            </Center>
+          </Card>
           <Space w="xs" />
         </Flex>
       </ScrollArea>

@@ -16,7 +16,7 @@ export function Hero() {
       {/* Left Column: Content */}
       <Center p="xl">
         <Stack gap="md" py="xl" maw={550}>
-          <Title order={1} fz={{ base: 40, xs: 50 }} lh={1.2}>
+          <Title order={1} fz={{ base: 40, xs: 50, lg: 64 }} lh={1.1}>
             Manufacturing excellence
           </Title>
           <Text size="xl" c="dimmed">
@@ -26,7 +26,7 @@ export function Hero() {
           <Group mt="md" gap="xl">
             <Button size="lg">Start an order</Button>
             <Anchor size="lg" underline="hover" fw={600}>
-              View collection
+              View products
             </Anchor>
           </Group>
         </Stack>
