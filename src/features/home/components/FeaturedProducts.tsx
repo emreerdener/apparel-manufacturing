@@ -26,7 +26,7 @@ export function FeaturedProducts() {
           {/* 1. The Gradient Glow Layer */}
           <Box
             pos="absolute"
-            inset={12}
+            inset={8}
             style={{
               zIndex: 0,
               filter: "blur(20px)",
