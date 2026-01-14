@@ -10,10 +10,9 @@ export function HowItsDone() {
           How it&apos;s done
         </Title>
         <Text c="dimmed" maw={800} ta="center" size="xl">
-          Quality isn&apos;t just a buzzword; it&apos;s our daily process. We
-          combine generations of manufacturing expertise with state-of-the-art
-          equipment to ensure your brand’s merchandise is produced to the
-          highest standard, right here in the USA.
+          We combine generations of manufacturing expertise with
+          state-of-the-art equipment to ensure your brand’s merchandise is
+          produced to the highest standard, right here in the USA.
         </Text>
       </Stack>
 
