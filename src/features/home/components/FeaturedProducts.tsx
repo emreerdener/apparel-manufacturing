@@ -38,7 +38,7 @@ export function FeaturedProducts() {
           />
 
           <TextInput
-            placeholder="Describe what you want to make..."
+            placeholder="What do you want to make?"
             leftSection={<IconSparkles2 size={24} />}
             size="xl"
             radius="lg"
