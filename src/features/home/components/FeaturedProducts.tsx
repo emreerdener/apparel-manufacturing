@@ -28,7 +28,7 @@ export function FeaturedProducts() {
               shadow="sm"
               radius="md"
               withBorder
-              w={rem(420)}
+              w={rem(260)}
               style={{ flexShrink: 0 }}
             >
               <Card.Section>
