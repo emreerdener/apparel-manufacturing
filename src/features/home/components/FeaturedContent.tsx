@@ -14,6 +14,7 @@ export default function FeaturedContent() {
   return (
     <Stack p="xl" gap="xl">
       <Grid gutter="xl" justify="center" align="center">
+        {/* Text */}
         <Grid.Col span={{ base: 12, md: 6 }} order={{ base: 2, md: 1 }}>
           <Center>
             <Stack gap="xs" py="xl" maw={600}>
@@ -31,6 +32,7 @@ export default function FeaturedContent() {
           </Center>
         </Grid.Col>
 
+        {/* Image */}
         <Grid.Col span={{ base: 12, md: 6 }} order={{ base: 1, md: 2 }}>
           <AspectRatio ratio={16 / 9}>
             <Image
@@ -43,6 +45,7 @@ export default function FeaturedContent() {
           </AspectRatio>
         </Grid.Col>
 
+        {/* Image */}
         <Grid.Col span={{ base: 12, md: 6 }} order={{ base: 3, md: 3 }}>
           <AspectRatio ratio={16 / 9}>
             <Image
@@ -55,6 +58,7 @@ export default function FeaturedContent() {
           </AspectRatio>
         </Grid.Col>
 
+        {/* Text */}
         <Grid.Col span={{ base: 12, md: 6 }} order={{ base: 4, md: 4 }}>
           <Center>
             <Stack gap="xs" py="xl" maw={600}>

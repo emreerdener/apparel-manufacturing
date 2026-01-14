@@ -39,10 +39,6 @@ export function ProductCard({ product }: ProductCardProps) {
         <Text c="dimmed" lineClamp={2}>
           {product.specifications?.material ?? "Premium Quality Product"}
         </Text>
-
-        <Text fw={700} size="lg">
-          ${product.base_price?.toFixed(2) ?? "0.00"}
-        </Text>
       </Stack>
 
       <Button
