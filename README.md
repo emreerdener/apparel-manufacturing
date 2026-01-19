@@ -6,8 +6,8 @@ This project modernizes the original shopping experience with a clean, responsiv
 
 ## 🚀 Tech Stack
 
-- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
-- **UI Library:** [Mantine v7](https://mantine.dev/)
+- **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
+- **UI Library:** [Mantine v8](https://mantine.dev/)
 - **Styling:** CSS Modules & PostCSS (Mantine Preset)
 - **Language:** TypeScript
 - **Icons:** Tabler Icons
