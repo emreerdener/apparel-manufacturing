@@ -7,11 +7,11 @@ export function NavigationLinks() {
   const linkSize = { base: "lg", md: "md" };
   return (
     <Flex gap={{ base: "lg", md: 0 }} direction={{ base: "column", md: "row" }}>
-      <Button component={Link} href="/about" variant="subtle" fz={linkSize}>
+      <Button component={Link} href="/products" variant="subtle" fz={linkSize}>
         Products
       </Button>
 
-      <Button component={Link} href="/contact" variant="subtle" fz={linkSize}>
+      <Button component={Link} href="/about" variant="subtle" fz={linkSize}>
         About us
       </Button>
 
@@ -28,10 +28,10 @@ export function NavigationLinks() {
           <Menu.Item component={Link} href="/news-events">
             News & events
           </Menu.Item>
-          <Menu.Item component={Link} href="/links">
+          <Menu.Item component={Link} href="/showrooms">
             Showrooms
           </Menu.Item>
-          <Menu.Item component={Link} href="/links">
+          <Menu.Item component={Link} href="/presentations">
             Presentations
           </Menu.Item>
         </Menu.Dropdown>

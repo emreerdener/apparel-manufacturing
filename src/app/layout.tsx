@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@mantine/core/styles.css";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import { theme } from "@/lib/theme";
-import { MainAppShell } from "@/features/layout/components/MainAppShell";
+import { MainAppShell } from "@/features/layout/components";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({

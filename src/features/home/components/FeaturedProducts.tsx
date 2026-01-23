@@ -1,22 +1,15 @@
 "use client";
 
-import { useState } from "react"; // 1. Import useState
-import { DUMMY_PRODUCTS } from "@/features/product/data/dummyProducts";
+import { useState } from "react";
 import {
-  Card,
-  Image,
-  Text,
-  AspectRatio,
   Stack,
   Flex,
   ScrollArea,
-  Space,
   Box,
-  rem,
-  Center,
   TextInput,
+  Skeleton,
 } from "@mantine/core";
-import { IconShirt, IconSparkles2 } from "@tabler/icons-react";
+import { IconSparkles2 } from "@tabler/icons-react";
 
 export function FeaturedProducts() {
   const [focused, setFocused] = useState(false);
@@ -66,47 +59,11 @@ export function FeaturedProducts() {
 
       <ScrollArea type="never">
         <Flex gap="xl" wrap="nowrap" p="xl">
-          {DUMMY_PRODUCTS.map((item, index) => (
-            <Card
-              key={index}
-              shadow="sm"
-              radius="md"
-              withBorder
-              w={rem(260)}
-              style={{ flexShrink: 0 }}
-            >
-              <Card.Section>
-                <Box style={{ backgroundColor: "white" }} p="md">
-                  <AspectRatio ratio={16 / 9}>
-                    <Image src={item.image} alt={item.title} fit="contain" />
-                  </AspectRatio>
-                </Box>
-              </Card.Section>
-
-              <Stack mt="md" gap={5}>
-                <Text fw={700} size="lg" lh={1.2}>
-                  {item.title}
-                </Text>
-              </Stack>
-            </Card>
-          ))}
-          <Card
-            shadow="sm"
-            radius="md"
-            withBorder
-            w={rem(260)}
-            style={{ flexShrink: 0 }}
-          >
-            <Center h="100%">
-              <Stack align="center">
-                <IconShirt size={40} />
-                <Text fw={700} size="lg">
-                  View all products
-                </Text>
-              </Stack>
-            </Center>
-          </Card>
-          <Space w="xs" />
+          {Array(5)
+            .fill(0)
+            .map((_, index) => (
+              <Skeleton h={260} radius="lg" key={index} />
+            ))}
         </Flex>
       </ScrollArea>
     </Stack>

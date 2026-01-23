@@ -21,6 +21,11 @@ export const theme = createTheme({
         radius: "md",
       },
     },
+    Badge: {
+      defaultProps: {
+        radius: "sm",
+      },
+    },
     ActionIcon: {
       defaultProps: {
         radius: "md",
